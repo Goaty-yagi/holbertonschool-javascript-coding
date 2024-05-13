@@ -15,8 +15,6 @@ request(url, function (error, response, body) {
   const tasks = JSON.parse(body);
   const obj = {};
   if (tasks.length) {
-    const id = tasks[0].id;
-    obj[id] = 0;
     for (const i of tasks) {
       if (i.completed) {
         if (!(i.userId in obj)) {
