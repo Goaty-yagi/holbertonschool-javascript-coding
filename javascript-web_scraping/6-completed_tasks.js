@@ -18,7 +18,7 @@ request(url, function (error, response, body) {
     let taskSum = 0;
     let id = tasks[0].id;
     for (const i of tasks) {
-      if (id !== i.userId) {
+      if (id !== i.userId && taskSum) {
         obj[id] = taskSum;
         id = i.userId;
         taskSum = 0;
@@ -27,7 +27,9 @@ request(url, function (error, response, body) {
         taskSum += 1;
       }
     }
-    obj[id] = taskSum;
+    if (taskSum) {
+      obj[id] = taskSum;
+    }
     console.log(obj);
   }
 });
