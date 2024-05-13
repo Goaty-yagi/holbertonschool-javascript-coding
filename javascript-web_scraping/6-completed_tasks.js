@@ -18,10 +18,10 @@ request(url, function (error, response, body) {
     const id = tasks[0].id;
     obj[id] = 0;
     for (const i of tasks) {
-      if (!(i.userId in obj)) {
-        obj[i.userId] = 0;
-      }
       if (i.completed) {
+        if (!(i.userId in obj)) {
+          obj[i.userId] = 0;
+        }
         obj[i.userId] += 1;
       }
     }
