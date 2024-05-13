@@ -18,10 +18,12 @@ request(url, function (error, response, body) {
     let taskSum = 0;
     let id = tasks[0].id;
     for (const i of tasks) {
-      if (id !== i.userId && taskSum) {
-        obj[id] = taskSum;
+      if (id !== i.userId) {
+        if (taskSum) {
+          obj[id] = taskSum;
+          taskSum = 0;
+        }
         id = i.userId;
-        taskSum = 0;
       }
       if (i.completed) {
         taskSum += 1;
