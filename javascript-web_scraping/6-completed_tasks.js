@@ -13,8 +13,8 @@ request(url, function (error, response, body) {
     console.log('error: ', error);
   }
   const tasks = JSON.parse(body);
+  const obj = {};
   if (tasks.length) {
-    const obj = {};
     let taskSum = 0;
     let id = tasks[0].id;
     for (const i of tasks) {
@@ -32,6 +32,6 @@ request(url, function (error, response, body) {
     if (taskSum) {
       obj[id] = taskSum;
     }
-    console.log(obj);
   }
+  console.log(obj);
 });
