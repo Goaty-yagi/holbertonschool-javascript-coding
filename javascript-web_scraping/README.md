@@ -36,3 +36,15 @@ This project is based on the learning objectives - see the [LEARNING_OBJECTIVES]
 - The first argument is the file path
 - The content of the file must be read in utf-8
 - If an error occurred during the reading, print the error object
+
+
+### 1. Write me
+
+**File:** [1-writeme.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/javascript-web_scraping/1-writeme.js)<br>
+**Description:** Write a script that writes a string to a file.<br>
+**Requirement:** <br>
+
+- The first argument is the file path
+- The second argument is the string to write
+- The content of the file must be written in utf-8
+- If an error occurred during while writing, print the error object
