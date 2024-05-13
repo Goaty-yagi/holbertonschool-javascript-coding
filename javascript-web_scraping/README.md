@@ -55,6 +55,7 @@ This project is based on the learning objectives - see the [LEARNING_OBJECTIVES]
 **Description:** Write a script that display the status code of a GET request.
 
 <br>
+
 **Requirement:** <br>
 
 - The first argument is the URL to request (GET)
@@ -72,3 +73,16 @@ This project is based on the learning objectives - see the [LEARNING_OBJECTIVES]
 - he first argument is the movie ID
 - ou must use the Star wars API with the endpoint https://wapi-api.hbtn.io/api/films/:id
 - ou must use the module request
+
+
+### 4. Star wars Wedge Antilles
+
+**File:** [4-starwars_count.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/javascript-web_scraping/4-starwars_count.js)<br>
+**Description:** Write a script that prints the number of movies where the character “Wedge Antilles” is present.
+<br>
+
+**Requirement:** <br>
+
+- The first argument is the API URL of the Star wars API: https://swapi-api.hbtn.io/api/films/
+- Wedge Antilles is character ID 18 - your script must use this ID for filtering the result of the API
+- You must use the module request
