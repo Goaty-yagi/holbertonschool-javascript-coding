@@ -1,0 +1,15 @@
+{
+  "name": "javascript-web_scraping",
+  "version": "1.0.0",
+  "description": "\"JavaScript - Web scraping\" is a repository dedicated to showcasing JavaScript code and tools for web scraping tasks. From simple scraping scripts to more advanced scraping techniques using libraries like Puppeteer or Cheerio, this repository serves as a resource for developers interested in extracting data from websites programmatically using JavaScript.",
+  "main": "0-readme.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "semistandard": "^17.0.0"
+  }
+}
