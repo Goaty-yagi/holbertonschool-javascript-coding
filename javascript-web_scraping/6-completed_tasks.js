@@ -15,22 +15,15 @@ request(url, function (error, response, body) {
   const tasks = JSON.parse(body);
   const obj = {};
   if (tasks.length) {
-    let taskSum = 0;
-    let id = tasks[0].id;
+    const id = tasks[0].id;
+    obj[id] = 0;
     for (const i of tasks) {
-      if (id !== i.userId) {
-        if (taskSum) {
-          obj[id] = taskSum;
-          taskSum = 0;
-        }
-        id = i.userId;
+      if (!(i.userId in obj)) {
+        obj[i.userId] = 0;
       }
       if (i.completed) {
-        taskSum += 1;
+        obj[i.userId] += 1;
       }
-    }
-    if (taskSum) {
-      obj[id] = taskSum;
     }
   }
   console.log(obj);
