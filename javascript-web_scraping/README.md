@@ -100,3 +100,16 @@ This project is based on the learning objectives - see the [LEARNING_OBJECTIVES]
 - The second argument the file path to store the body response
 - The file must be UTF-8 encoded
 - You must use the module request
+
+
+### 6. How many completed?
+
+**File:** [6-completed_tasks.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/javascript-web_scraping/6-completed_tasks.js)<br>
+**Description:** Write a script that computes the number of tasks completed by user id.
+<br>
+
+**Requirement:** <br>
+
+- The first argument is the API URL: https://jsonplaceholder.typicode.com/todos
+- Only print users with completed task
+- You must use the module request
