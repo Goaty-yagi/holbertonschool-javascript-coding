@@ -61,3 +61,14 @@ This project is based on the learning objectives - see the [LEARNING_OBJECTIVES]
 - The status code must be printed like this: code: <status code>
 - You must use the module request
 
+### 3. Star wars movie title
+
+**File:** [3-starwars_title.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/javascript-web_scraping/3-starwars_title.js)<br>
+**Description:** Write a script that prints the title of a Star Wars movie where the episode number matches a given integer.
+<br>
+
+**Requirement:** <br>
+
+- he first argument is the movie ID
+- ou must use the Star wars API with the endpoint https://wapi-api.hbtn.io/api/films/:id
+- ou must use the module request
