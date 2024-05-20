@@ -21,7 +21,6 @@ function messageGenerator(array, field = '') {
 }
 
 function countStudents(path) {
-
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (error, data) => {
       if (error) {
@@ -30,11 +29,11 @@ function countStudents(path) {
       }
       const lines = data.trim().split('\n').slice(1);
       const filteredLines = lines.filter((line) => line.trim() !== '');
-      const array = []
+      const array = [];
       array.push(messageGenerator(filteredLines));
       array.push(messageGenerator(filteredLines, 'CS'));
       array.push(messageGenerator(filteredLines, 'SWE'));
-      return resolve(array);
+      resolve(array);
     });
   });
 }
@@ -47,12 +46,12 @@ const app = http.createServer((req, res) => {
       break;
     case '/students':
       res.write('This is the list of our students\n');
-      countStudents("database.csv")
+      countStudents('database.csv')
         .then((data) => {
           data.forEach((student, index) => {
-            const newLine = data.length === index + 1 ? '' : '\n'
+            const newLine = data.length === index + 1 ? '' : '\n';
             res.write(student + newLine);
-          })
+          });
           res.end();
         })
         .catch((error) => {
@@ -64,7 +63,7 @@ const app = http.createServer((req, res) => {
       res.end('404 Not Found');
       break;
   }
-})
+});
 
 app.listen(PORT);
 module.exports = app;
