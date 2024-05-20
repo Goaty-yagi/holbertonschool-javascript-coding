@@ -75,3 +75,28 @@ This project is based on the learning objectives - see the [LEARNING_OBJECTIVES]
 - It should log the number of students in each field, and the list with the following format: Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES
 - CSV file can contain empty lines (at the end) - and they are not a valid student!
 
+
+### 4. Create a small HTTP server using Node's HTTP module
+
+**File:** [4-http.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/Node_JS_basic/4-http.js)<br>
+**Description:** In a file named 4-http.js, create a small HTTP server using the http module:<br>
+**Requirement:** <br>
+- It should be assigned to the variable app and this one must be exported
+- HTTP server should listen on port 1245
+- Displays Hello Holberton School! in the page body for any endpoint as plain text
+
+In terminal 1:
+```bash
+bob@dylan:~$ node 4-http.js
+...
+```
+
+In terminal 2:
+```bash
+bob@dylan:~$ curl localhost:1245 && echo ""
+Hello Holberton School!
+bob@dylan:~$ 
+bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
+Hello Holberton School!
+bob@dylan:~$ 
+```
