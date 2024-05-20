@@ -168,3 +168,42 @@ bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
 </html> 
 bob@dylan:~$ 
 ```
+
+### 7. Create a more complex HTTP server using Express
+
+**File:** [7-http_express.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/Node_JS_basic/7-http_express.js)<br>
+**Description:** In a file named 7-http_express.js, recreate the small HTTP server using Express:
+<br>
+
+**Requirement:** <br>
+- It should be assigned to the variable app and this one must be exported
+- HTTP server should listen on port 1245
+- It should return plain text
+- When the URL path is /, it should display Hello Holberton School! in the page body
+- When the URL path is /students, it should display This is the list of our students followed by the same content as the file 3-read_file_async.js (with and without the database) - the name of the database must be passed as argument of the file
+- CSV file can contain empty lines (at the end) - and they are not a valid student!
+
+In terminal 1:
+```bash
+bob@dylan:~$ node 6-http_express.js
+...
+```
+
+In terminal 2:
+```bash
+bob@dylan:~$ curl localhost:1245 && echo ""
+Hello Holberton School!
+bob@dylan:~$ 
+bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /any_endpoint</pre>
+</body>
+</html> 
+bob@dylan:~$ 
+```
