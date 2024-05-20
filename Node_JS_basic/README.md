@@ -131,3 +131,40 @@ Number of students in CS: 6. List: Johann, Arielle, Jonathan, Emmanuel, Guillaum
 Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 bob@dylan:~$ 
 ```
+
+
+### 6. Create a small HTTP server using Express
+
+**File:** [6-http_express.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/Node_JS_basic/6-http_express.js)<br>
+**Description:** Install Express and in a file named 6-http_express.js, create a small HTTP server using Express module:
+<br>
+
+**Requirement:** <br>
+- It should be assigned to the variable app and this one must be exported
+- HTTP server should listen on port 1245
+- Displays Hello Holberton School! in the page body for the endpoint /
+
+In terminal 1:
+```bash
+bob@dylan:~$ node 6-http_express.js
+...
+```
+
+In terminal 2:
+```bash
+bob@dylan:~$ curl localhost:1245 && echo ""
+Hello Holberton School!
+bob@dylan:~$ 
+bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /any_endpoint</pre>
+</body>
+</html> 
+bob@dylan:~$ 
+```
