@@ -27,7 +27,7 @@ function countStudents(path) {
         return;
       }
       const lines = data.trim().split('\n').slice(1);
-      const filteredLines = lines.filter(line => line.trim() !== '');
+      const filteredLines = lines.filter((line) => line.trim() !== '');
       console.log(messageGenerator(filteredLines));
       console.log(messageGenerator(filteredLines, 'CS'));
       console.log(messageGenerator(filteredLines, 'SWE'));
