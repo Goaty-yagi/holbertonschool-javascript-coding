@@ -33,3 +33,17 @@ This project is based on the learning objectives - see the [LEARNING_OBJECTIVES]
 **Requirement:** <br>
 
 
+### 1. Using Process stdin
+
+**File:** [1-stdin.js](https://github.com/Goaty-yagi/holbertonschool-javascript-coding/blob/main/Node_JS_basic/1-stdin.js)<br>
+**Description:** Create a program named 1-stdin.js that will be executed through command line:
+**Requirement:** <br>
+
+- It should display the message Welcome to Holberton School, what is your name? (followed by a new line)
+- The user should be able to input their name on a new line
+- The program should display Your name is: INPUT
+- When the user ends the program, it should display This important software is now closing (followed by a new line)
+
+- Your code will be tested through a child process, make sure you have everything you need for that
+
+
