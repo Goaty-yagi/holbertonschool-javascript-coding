@@ -4,6 +4,9 @@ process.stdin.on('readable', () => {
   if (name !== null) {
     process.stdout.write(`Your name is: ${name}`);
   }
-  process.stdout.write('This important software is now closing\n');
   process.exit();
+});
+
+process.on('exit', () => {
+  process.stdout.write('This important software is now closing\n');
 });
