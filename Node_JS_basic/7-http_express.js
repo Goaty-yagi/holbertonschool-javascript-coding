@@ -17,7 +17,7 @@ function messageGenerator(array, field = '') {
       firstnameList.push(student[0]);
     }
   }
-  return `${messageWithField} ${firstnameList.length}. list: ${firstnameList.join(', ')}`;
+  return `${messageWithField} ${firstnameList.length}. List: ${firstnameList.join(', ')}`;
 }
 
 function countStudents(path) {
