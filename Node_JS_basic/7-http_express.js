@@ -55,7 +55,7 @@ app.get('/students', (req, res) => {
       res.end();
     })
     .catch((error) => {
-      res.status(500).send(`${text}\n${error.message}\n`);
+      res.status(500).send(`${text}\n${error.message}`);
     });
 });
 app.use((req, res) => {
