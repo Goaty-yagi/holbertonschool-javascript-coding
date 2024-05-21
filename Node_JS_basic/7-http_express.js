@@ -20,9 +20,9 @@ function messageGenerator(array, field = '') {
   return `${messageWithField} ${firstnameList.length}. List: ${firstnameList.join(', ')}`;
 }
 
-function countStudents(path) {
+function countStudents(filePath) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf8', (error, data) => {
+    fs.readFile(filePath, 'utf8', (error, data) => {
       if (error) {
         reject(new Error('Cannot load the database'));
         return;
@@ -45,19 +45,18 @@ app.get('/', (req, res) => {
 
 app.get('/students', (req, res) => {
   let text = 'This is the list of our students\n';
-  if (process.argv.length >= 2) {
-    countStudents(process.argv[2])
-      .then((data) => {
-        data.forEach((student, index) => {
-          const newLine = data.length === index + 1 ? '' : '\n';
-          text += student + newLine;
-        });
-        res.send(text);
-      })
-      .catch((error) => {
-        res.send(error.message);
+  countStudents(process.argv[2])
+    .then((data) => {
+      data.forEach((student, index) => {
+        const newLine = data.length === index + 1 ? '' : '\n';
+        text += student + newLine;
       });
-  }
+      res.write(text);
+      res.end();
+    })
+    .catch((error) => {
+      res.status(500).send(`Cannot load the database: ${error.message}\n`);
+    });
 });
 app.use((req, res) => {
   res.status(404).send('404 Not Found');
