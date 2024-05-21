@@ -55,7 +55,7 @@ app.get('/students', (req, res) => {
         res.send(text);
       })
       .catch((error) => {
-        console.log(error);
+        res.send(error.message);
       });
   }
 });
