@@ -58,7 +58,7 @@ const app = http.createServer((req, res) => {
           res.end();
         })
         .catch((error) => {
-          res.end(`Cannot load the database`);
+          res.end(error.message);
         });
       break;
     default:
