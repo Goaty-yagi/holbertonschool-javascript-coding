@@ -24,8 +24,8 @@ function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (error, data) => {
       if (error) {
-        reject(new Error('Cannot load the database'));
-        return;
+        console.log("INI, ERROR", path)
+        return reject(new Error('Cannot load the database'));
       }
       const lines = data.trim().split('\n').slice(1);
       const filteredLines = lines.filter((line) => line.trim() !== '');
@@ -52,11 +52,13 @@ const app = http.createServer((req, res) => {
             const newLine = data.length === index + 1 ? '' : '\n';
             res.write(student + newLine);
           });
-          res.end();
         })
         .catch((error) => {
-          console.log(error);
-        });
+          res.write(error.message);
+        })
+        .finally(() => {
+          res.end();
+        })
       break;
     default:
       res.writeHead(404, { 'Content-Type': 'text/plain' });
