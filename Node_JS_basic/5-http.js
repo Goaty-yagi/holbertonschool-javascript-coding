@@ -39,6 +39,7 @@ function countStudents(filePath) {
 }
 
 const PORT = 1245;
+const [, , dbFilePath] = process.argv;
 const app = http.createServer((req, res) => {
   switch (req.url) {
     case '/':
@@ -48,7 +49,6 @@ const app = http.createServer((req, res) => {
     case '/students':
       res.writeHead(200, { 'Content-Type': 'text/plain' });
       res.write('This is the list of our students\n');
-      const dbFilePath = process.argv[2];
       countStudents(dbFilePath)
         .then((data) => {
           data.forEach((student, index) => {

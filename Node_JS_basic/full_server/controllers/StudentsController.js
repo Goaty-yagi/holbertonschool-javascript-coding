@@ -1,11 +1,11 @@
-import { readDatabase } from '../utils.js';
+import { readDatabase } from '../utils';
 
 class StudentsController {
   static async getAllStudents(req, res) {
     try {
       const database = process.argv[2];
       const students = await readDatabase(database);
-      
+
       let response = 'This is the list of our students\n';
       for (const [field, names] of Object.entries(students).sort()) {
         response += `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}\n`;
@@ -27,12 +27,12 @@ class StudentsController {
 
       const database = process.argv[2];
       const students = await readDatabase(database);
-      
+
       if (!students[major]) {
         res.status(200).send('List: ');
         return;
       }
-      
+
       const names = students[major];
       res.status(200).send(`List: ${names.join(', ')}`);
     } catch (error) {
